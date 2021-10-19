@@ -37,3 +37,16 @@ phone.addEventListener('input',function() {
     else phoneError.textContent = "PHONE NUMBER IS INCORRECT";
 });
 
+/*
+ * UC4: As a User need to follow pre-defined Password rules. 
+ * Rule1 – minimum 8 Characters 
+ */
+const password = document.querySelector('#pwd');
+const passwordError = document.querySelector('.password-error');
+password.addEventListener('input',function() {
+    let passwordRegex = RegExp('((?=.*[a-z A-Z]).{8,})');
+    if(passwordRegex.test(password.value))
+        passwordError.textContent="";
+    else passwordError.textContent = "PASSWORD IS INCORRECT";
+});
+
