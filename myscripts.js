@@ -23,3 +23,17 @@ email.addEventListener('input',function() {
         emailError.textContent="";
     else emailError.textContent = "EMAIL IS INCORRECT";
 });
+
+/*
+ * UC3: As a User need to follow pre-defined Mobile Format
+ * Country code follow by space and 10 digit number
+ */
+const phone = document.querySelector('#phone');
+const phoneError = document.querySelector('.phone-error');
+phone.addEventListener('input',function() {
+    let phoneRegex = RegExp('^[+][0-9]{2}[\\s,-][0-9]{10}$');
+    if(phoneRegex.test(phone.value))
+        phoneError.textContent="";
+    else phoneError.textContent = "PHONE NUMBER IS INCORRECT";
+});
+
