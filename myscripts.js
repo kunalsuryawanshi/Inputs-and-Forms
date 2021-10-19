@@ -38,13 +38,16 @@ phone.addEventListener('input',function() {
 });
 
 /*
- * UC4: As a User need to follow pre-defined Password rules. 
+ * UC5:  
  * Rule1 – minimum 8 Characters 
+ * Rule2 – Should have at least 1 Upper Case
+ * Rule3 – Should have at least 1 numeric number in the password
+ * Rule4 – Has exactly 1 Special Character
  */
 const password = document.querySelector('#pwd');
 const passwordError = document.querySelector('.password-error');
 password.addEventListener('input',function() {
-    let passwordRegex = RegExp('((?=.*[a-z A-Z]).{8,})');
+    let passwordRegex = RegExp('((?=.*[0-9])(?=.*[a-z A-Z])(?=.*[!@#$%^&*]).{8,20})');
     if(passwordRegex.test(password.value))
         passwordError.textContent="";
     else passwordError.textContent = "PASSWORD IS INCORRECT";
